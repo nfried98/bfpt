@@ -1,0 +1,8 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /prices/{document=**} {
+      allow read, write: if true;  // For testing purposes, allowing all access
+    }
+  }
+} 
